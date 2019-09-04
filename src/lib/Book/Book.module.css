@@ -1,0 +1,56 @@
+.container {
+  text-align: left;
+  padding: 10px 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 0.9;
+  padding: 50px;
+}
+
+img {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.booktitle {
+  font-size: 12px;
+}
+.author {
+  font-size: 10px;
+}
+/* .bookShelfChanger {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+
+  border-radius: 100%;
+  border: none;
+  background: #5aaa56;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 7%;
+  right: 2%;
+
+} 
+*/
+
+.bookShelfChanger {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  width: 40px;
+  osition: absolute;
+  height: 40px;
+  background: #60ac5d;
+  border-radius: 50%;
+  /* background-image: url("../../icons/arrow-drop-down.svg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+/* .bookShelfChanger::after {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  left: 35%;
+  top: 38%;
+  border: 6px solid transparent;
+  border-top-color: white;
+  content: "";
+} */

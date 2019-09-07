@@ -1,9 +1,8 @@
 .container {
   text-align: left;
-  padding: 10px 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 0.9;
-  padding: 50px;
+  width: 150px;
+  position: relative;
 }
 
 img {
@@ -31,16 +30,33 @@ img {
 */
 
 .bookShelfChanger {
-  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
   width: 40px;
-  osition: absolute;
+  position: absolute;
   height: 40px;
   background: #60ac5d;
   border-radius: 50%;
-  /* background-image: url("../../icons/arrow-drop-down.svg"); */
-  background-repeat: no-repeat;
+  /* background-image: url(../../icons/arrow-drop-down.svg); */
+  /* background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
+  bottom: 39px;
+  right: -20px; */
+  /* opacity: 0; */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.greenCircle {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  width: 40px;
+  position: absolute;
+  height: 40px;
+  background: #60ac5d;
+  border-radius: 50%;
+  bottom: 62px;
+  right: 2px;
 }
 
 /* .bookShelfChanger::after {

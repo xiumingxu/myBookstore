@@ -55,8 +55,8 @@ img {
   height: 40px;
   background: #60ac5d;
   border-radius: 50%;
-  bottom: 62px;
-  right: 2px;
+  top: 176px;
+  right: -9px;
 }
 
 /* .bookShelfChanger::after {

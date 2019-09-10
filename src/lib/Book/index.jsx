@@ -13,21 +13,42 @@ const propTypes = {
 class Book extends React.Component {
   state = {
     optionList: [
+      { label: "Moving...", value: "moving" },
       { label: "CurrentlyReading", value: "currentlyReading" },
       { label: "Want to Read", value: "wantToRead" },
       { label: "Done", value: "read" }
     ]
   };
   render() {
-    // const { authors, title, imgsrc, onChangeHandler } = this.props;
-    // onChangeHandler was bubbled up
-    // const book = this.props.book;
     const authors = this.props.authors;
     const title = this.props.title;
-    const imgsrc = this.props.imageLinks.thumbnail;
     const onChangeHandler = this.props.onChangeHandler;
     const book = this.props.book;
+    const imgsrc = this.props.imageLinks.thumbnail;
 
+    // const authors = "Big issue";
+    // const title = "Big issue";
+    // const onChangeHandler = this.props.onChangeHandler;
+    // const book = "book";
+
+    // const imgsrc =
+    //   "https://store-images.s-microsoft.com/image/apps.44424.13946487343453322.7f94d75c-3c41-4a61-93d9-41aed210dea3.7e33abda-0ccc-42b1-aaab-3832e08bb141?mode=scale&q=90&h=720&w=1280";
+
+    const makeOption = item => {
+      if (item.value == "moving") {
+        return (
+          <option key={item.value} value={item.value} disabled>
+            {item.label}
+          </option>
+        );
+      } else {
+        return (
+          <option key={item.value} value={item.value}>
+            {item.label}
+          </option>
+        );
+      }
+    };
     return (
       <div className={styles.container}>
         <div
@@ -45,13 +66,12 @@ class Book extends React.Component {
           <select
             className={styles.bookShelfChanger}
             onChange={e => onChangeHandler(e.target.value, book)}>
-            {this.state.optionList.map(item => (
+            {this.state.optionList.map(item =>
               // add selected if
-              <option value={item.value}>{item.label}</option>
-            ))}
+              makeOption(item)
+            )}
           </select>
         </div>
-
         <p className={styles.booktitle}>{title}</p>
         <p className={styles.author}>{authors}</p>
       </div>

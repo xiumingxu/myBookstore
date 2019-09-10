@@ -17,7 +17,14 @@ const BookList = ({ bookList, onChangeHandler }) => (
   <div className={styles.container}>
     {bookList.map(book => {
       // console.log("...item", { ...item });
-      return <Book {...book} onChangeHandler={onChangeHandler} book={book} />;
+      return (
+        <Book
+          key={book.id}
+          {...book}
+          onChangeHandler={onChangeHandler}
+          book={book}
+        />
+      );
     })}
   </div>
 );

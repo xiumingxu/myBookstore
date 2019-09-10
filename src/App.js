@@ -5,6 +5,7 @@ import BookList from "./lib/BookList";
 import * as BooksAPI from "./BooksAPI";
 import Heading from "./lib/Heading";
 import SubHeading from "./lib/Subheading";
+import CornerButton from "./lib/CornerButton";
 
 const optionList = [
   { label: "Reading", value: "reading" },
@@ -32,7 +33,32 @@ const data = [
     optionList
   }
 ];
-
+// const book1 = {
+//   id:0,
+//   allowAnonLogging: false,
+//   authors: ["Liaquat Ahamed"],
+//   averageRating: 4.5,
+//   canonicalVolumeLink: "https://books.google.com/books/about/Lords_of_Finance.html?hl=&id=74XNzF_al3MC",
+//   categories: ["Business & Economics"],
+//   contentVersion: "1.0.0.0.preview.0",
+//   description: "Argues that the stock market crash of 1929 and subsequent Depression occurred as a result of poor decisions on the part of four central bankers who jointly attempted to reconstruct international finance by reinstating the gold standard.",
+//   id: "74XNzF_al3MC",
+//   imageLinks: { smallThumbnail: "http://books.google.com/books/content?id=74XNzF_al…=frontcover&img=1&zoom=5&edge=curl&source=gbs_api", thumbnail: "http://books.google.com/books/content?id=74XNzF_al…=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" },
+//   industryIdentifiers: (2)[{ … }, { … }],
+//   infoLink: "http://books.google.com/books?id=74XNzF_al3MC&dq=finance&hl=&source=gbs_api",
+//   language: "en",
+//   maturityRating: "NOT_MATURE",
+//   pageCount: 564,
+//   previewLink: "http://books.google.com/books?id=74XNzF_al3MC&printsec=frontcover&dq=finance&hl=&cd=1&source=gbs_api",
+//   printType: "BOOK",
+//   publishedDate: "2009-01",
+//   publisher: "Penguin",
+//   ratingsCount: 14,
+//   readingModes: { text: false, image: false },
+//   shelf: "currentlyReading",
+//   subtitle: "The Bankers Who Broke the World",
+//   title: "Lords of Finance"
+// };
 class App extends React.Component {
   state = {
     books: []
@@ -85,6 +111,9 @@ class App extends React.Component {
       })
     );
   };
+  search = () => {
+    console.log("go to search");
+  };
 
   render() {
     let { books } = this.state;
@@ -106,6 +135,7 @@ class App extends React.Component {
           bookList={books.filter(book => book.shelf === "read")}
           onChangeHandler={this.onChangeHandler}
         />
+        <CornerButton changePage={this.search} />
       </div>
     );
   }

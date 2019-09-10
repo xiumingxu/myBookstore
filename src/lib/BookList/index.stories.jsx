@@ -5,31 +5,29 @@ import BookList from "./index";
 
 const stories = storiesOf("lib/BookList", module);
 
-const optionList = [
-  { label: "Reading", value: "reading" },
-  { label: "Want to Read", value: "wantToRead" },
-  { label: "Done", value: "done" }
-];
+// const optionList = [
+//   { label: "Reading", value: "reading" },
+//   { label: "Want to Read", value: "wantToRead" },
+//   { label: "Done", value: "done" }
+// ];
+
 stories.add("default", () => (
   <BookList
     bookList={[
       {
-        imgsrc: "https://via.placeholder.com/150x200",
-        author: "Harper",
-        bookName: "To Kill a Mockingbird",
-        optionList
+        imageLinks: { thumbnail: "https://via.placeholder.com/150x200" },
+        authors: ["Harper"],
+        title: "To Kill a Mockingbird"
       },
       {
-        imgsrc: "https://via.placeholder.com/150x200",
-        author: "B",
-        bookName: "abc",
-        optionList
+        imageLinks: { thumbnail: "https://via.placeholder.com/150x200" },
+        author: ["B"],
+        title: "abc"
       },
       {
-        imgsrc: "https://via.placeholder.com/150x200",
-        author: "ablkajdslfjasdljf asdf",
-        bookName: "abclajdslf ja ad",
-        optionList
+        imageLinks: { thumbnail: "https://via.placeholder.com/150x200" },
+        authors: ["ablkajdslfjasdljf asdf"],
+        title: "abclajdslf ja ad"
       }
     ]}
   />

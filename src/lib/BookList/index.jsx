@@ -13,11 +13,12 @@ const propTypes = {
   ).isRequired
 };
 
-const BookList = ({ bookList }) => (
+const BookList = ({ bookList, onChangeHandler }) => (
   <div className={styles.container}>
-    {bookList.map(item => (
-      <Book {...item} />
-    ))}
+    {bookList.map(book => {
+      // console.log("...item", { ...item });
+      return <Book {...book} onChangeHandler={onChangeHandler} book={book} />;
+    })}
   </div>
 );
 

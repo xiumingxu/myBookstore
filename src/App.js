@@ -44,11 +44,6 @@ class App extends React.Component {
       // this.setState({ books: res });
       this.setState({ books: res });
 
-      console.log(
-        "filter",
-        this.state.books.filter(book => book.shelf == "currentlyReading")
-      );
-
       // value:
 
       // 0:
@@ -75,11 +70,21 @@ class App extends React.Component {
       // shelf: "currentlyReading"
       // subtitle: "The Bankers Who Broke the World"
       // title: "Lords of Finance"
-
-      console.log("this.state.books.key", Object.values(this.state.books));
-      console.log("this.state.books", this.state.books);
     });
   }
+
+  // change the this problem
+  onChangeHandler = (value, b) => {
+    BooksAPI.update(b, value).then(res =>
+      this.setState(preState => {
+        const newBooks = preState.books.map(book => {
+          if (book.title === b.title) book.shelf = value;
+          return book;
+        });
+        return { books: newBooks };
+      })
+    );
+  };
 
   render() {
     let { books } = this.state;
@@ -89,13 +94,18 @@ class App extends React.Component {
         <SubHeading text='Currently Reading' />
         <BookList
           bookList={books.filter(book => book.shelf === "currentlyReading")}
+          onChangeHandler={this.onChangeHandler}
         />
         <SubHeading text='Want to Read' />
         <BookList
           bookList={books.filter(book => book.shelf === "wantToRead")}
+          onChangeHandler={this.onChangeHandler}
         />
         <SubHeading text='Read' />
-        <BookList bookList={books.filter(book => book.shelf === "read")} />
+        <BookList
+          bookList={books.filter(book => book.shelf === "read")}
+          onChangeHandler={this.onChangeHandler}
+        />
       </div>
     );
   }

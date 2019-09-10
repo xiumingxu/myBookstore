@@ -13,18 +13,20 @@ const propTypes = {
 class Book extends React.Component {
   state = {
     optionList: [
-      { label: "Reading", value: "reading" },
+      { label: "CurrentlyReading", value: "currentlyReading" },
       { label: "Want to Read", value: "wantToRead" },
-      { label: "Done", value: "done" }
+      { label: "Done", value: "read" }
     ]
   };
   render() {
     // const { authors, title, imgsrc, onChangeHandler } = this.props;
     // onChangeHandler was bubbled up
+    // const book = this.props.book;
     const authors = this.props.authors;
     const title = this.props.title;
     const imgsrc = this.props.imageLinks.thumbnail;
     const onChangeHandler = this.props.onChangeHandler;
+    const book = this.props.book;
 
     return (
       <div className={styles.container}>
@@ -42,7 +44,7 @@ class Book extends React.Component {
         <div className={styles.greenCircle}>
           <select
             className={styles.bookShelfChanger}
-            onChange={e => onChangeHandler(e.target.value)}>
+            onChange={e => onChangeHandler(e.target.value, book)}>
             {this.state.optionList.map(item => (
               // add selected if
               <option value={item.value}>{item.label}</option>

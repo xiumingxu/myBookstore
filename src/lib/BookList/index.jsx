@@ -11,21 +11,25 @@ const propTypes = {
       title: PropTypes.string.isRequired
     })
   ).isRequired
+  // bookList: PropTypes.array.isRequired
 };
 
 const BookList = ({ bookList, onChangeHandler }) => (
   <div className={styles.container}>
-    {bookList.map(book => {
-      // console.log("...item", { ...item });
-      return (
-        <Book
-          key={book.id}
-          {...book}
-          onChangeHandler={onChangeHandler}
-          book={book}
-        />
-      );
-    })}
+    {bookList.length !== 0 &&
+      bookList.map(book => {
+        // console.log("...item", { ...item });
+        return (
+          <div className='bookContainer'>
+            <Book
+              key={book.id}
+              {...book}
+              onChangeHandler={onChangeHandler}
+              book={book}
+            />
+          </div>
+        );
+      })}
   </div>
 );
 

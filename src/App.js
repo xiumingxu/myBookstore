@@ -73,6 +73,7 @@ export default class App extends React.Component {
           render={
             ({ history }) => (
               <Search
+                onChangeHandler={this.onChangeHandler}
                 goback={() => {
                   history.push("/");
                 }}

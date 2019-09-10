@@ -13,7 +13,7 @@ const propTypes = {
 class Book extends React.Component {
   state = {
     optionList: [
-      { label: "Moving...", value: "moving" },
+      { label: "Moving to...", value: "moving" },
       { label: "CurrentlyReading", value: "currentlyReading" },
       { label: "Want to Read", value: "wantToRead" },
       { label: "Done", value: "read" }
@@ -25,14 +25,7 @@ class Book extends React.Component {
     const onChangeHandler = this.props.onChangeHandler;
     const book = this.props.book;
     const imgsrc = this.props.imageLinks.thumbnail;
-
-    // const authors = "Big issue";
-    // const title = "Big issue";
-    // const onChangeHandler = this.props.onChangeHandler;
-    // const book = "book";
-
-    // const imgsrc =
-    //   "https://store-images.s-microsoft.com/image/apps.44424.13946487343453322.7f94d75c-3c41-4a61-93d9-41aed210dea3.7e33abda-0ccc-42b1-aaab-3832e08bb141?mode=scale&q=90&h=720&w=1280";
+    const selected = this.props.shelf;
 
     const makeOption = item => {
       if (item.value == "moving") {
@@ -42,11 +35,18 @@ class Book extends React.Component {
           </option>
         );
       } else {
-        return (
-          <option key={item.value} value={item.value}>
-            {item.label}
-          </option>
-        );
+        if (selected === item.value)
+          return (
+            <option key={item.value} value={item.value} selected>
+              {item.label}
+            </option>
+          );
+        else
+          return (
+            <option key={item.value} value={item.value}>
+              {item.label}
+            </option>
+          );
       }
     };
     return (
@@ -65,7 +65,11 @@ class Book extends React.Component {
         <div className={styles.greenCircle}>
           <select
             className={styles.bookShelfChanger}
-            onChange={e => onChangeHandler(e.target.value, book)}>
+            onChange={e => {
+              onChangeHandler(e.target.value, book);
+
+              this.setState({ selected: e.target.value });
+            }}>
             {this.state.optionList.map(item =>
               // add selected if
               makeOption(item)

@@ -1,0 +1,16 @@
+.container {
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 30px;
+  min-width: 30px;
+  background-image: url("https://www.searchpng.com/wp-content/uploads/2019/02/Back-Arrow-Icon-PNG-715x715.png");
+  background-size: cover;
+}
+.backButton {
+  display: inline-block;
+}
+button {
+  background: none;
+}

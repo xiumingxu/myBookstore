@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+/* book children */
+.container > * {
+  padding: 0 25px;
+}
+
+.bookContainer {
+}
+/* .container {
+  list-style-type: none;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} */

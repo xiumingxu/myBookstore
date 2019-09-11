@@ -5,8 +5,9 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-height: 30px;
   min-width: 30px;
-  background-image: url("https://www.searchpng.com/wp-content/uploads/2019/02/Back-Arrow-Icon-PNG-715x715.png");
-  background-size: cover;
+  background-image: url(https://www.searchpng.com/wp-content/uploads/2019/02/Back-Arrow-Icon-PNG-715x715.png);
+  background-size: 43px 49px;
+  opacity: 0.5;
 }
 .backButton {
   display: inline-block;

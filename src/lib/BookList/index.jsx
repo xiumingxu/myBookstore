@@ -20,7 +20,7 @@ const BookList = ({ bookList, onChangeHandler }) => (
       bookList.map(book => {
         // console.log("...item", { ...item });
         return (
-          <div className='bookContainer'>
+          <div className='bookContainer' key={book.id}>
             <Book
               key={book.id}
               {...book}

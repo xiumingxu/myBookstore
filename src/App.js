@@ -1,10 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Shelf from "./Shelf";
-import Search from "./Search";
-import * as BooksAPI from "./BooksAPI";
-
 import {
   Switch,
   Route,
@@ -13,6 +7,10 @@ import {
   // etc.
 } from "react-router-dom";
 
+import "./App.css";
+import Shelf from "./Shelf";
+import Search from "./Search";
+import * as BooksAPI from "./BooksAPI";
 import CornerButton from "./lib/CornerButton";
 
 export default class App extends React.Component {
@@ -28,7 +26,9 @@ export default class App extends React.Component {
   }
 
   // change the this problem
+  // change b = bookObj
   onChangeHandler = (value, b) => {
+    // look into async await
     BooksAPI.update(b, value).then(res =>
       this.setState(preState => {
         const newBooks = preState.books.map(book => {
@@ -48,6 +48,7 @@ export default class App extends React.Component {
     let { books } = this.state;
     // go home
 
+    console.log(this.props);
     return (
       <div className='App'>
         {/* <Route exact path='/' component={Shelf}> */}

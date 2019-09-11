@@ -16,7 +16,8 @@ class Book extends React.Component {
       { label: "Moving to...", value: "moving" },
       { label: "CurrentlyReading", value: "currentlyReading" },
       { label: "Want to Read", value: "wantToRead" },
-      { label: "Done", value: "read" }
+      { label: "Read", value: "read" },
+      { label: "None", value: "none" }
     ]
   };
   render() {
